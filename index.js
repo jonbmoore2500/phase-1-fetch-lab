@@ -1,6 +1,10 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  return fetch('https://anapioficeandfire.com/api/books')
+  .then(resp => resp.json())
+  .then(books => renderBooks(books));
+  // .then(books => books.forEach(book => renderBooks(book)))
+  // renderBooks already handles the iteration, trying to do it twice breaks
 }
 
 function renderBooks(books) {
